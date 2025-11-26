@@ -1,0 +1,109 @@
+
+.view-details {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--bg-app);
+    overflow-y: auto;
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+}
+
+.view-details.active { display: flex; animation: slideUp 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+
+.detail-header-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 30;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.hero-container {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-body {
+    flex: 1;
+    padding: 20px;
+    margin-top: -20px;
+    background-color: var(--bg-app);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    position: relative;
+    z-index: 25;
+}
+
+.detail-title-row { margin-bottom: 8px; }
+.detail-title-row h1 { font-size: 1.5rem; font-weight: 700; }
+
+.detail-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    align-items: center;
+}
+.stat-item { display: flex; align-items: center; gap: 4px; }
+.star-active { color: var(--text-primary); }
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn-large {
+    flex: 1;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn-icon-sq {
+    width: 50px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+.reviews-list h3 { font-size: 1.1rem; margin-bottom: 16px; font-weight: 600; }
+
+.review-item {
+    background-color: var(--bg-card);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.review-header { display: flex; align-items: center; margin-bottom: 10px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+.reviewer-name { font-size: 0.9rem; font-weight: 600; display: block; }
+.reviewer-stars { font-size: 0.8rem; color: var(--text-secondary); }
+.review-text { font-size: 0.9rem; line-height: 1.5; color: #ccc; }
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
